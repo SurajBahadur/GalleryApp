@@ -2,8 +2,18 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Gallery" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Light theme colors -->
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
+        <item name="android:statusBarColor">@color/md_theme_status_bar</item>
+        <item name="android:navigationBarColor">@color/md_theme_background</item>
+        <item name="android:windowBackground">@color/md_theme_background</item>
     </style>
 
-    <style name="Theme.Gallery" parent="Base.Theme.Gallery" />
+    <style name="Theme.Gallery" parent="Base.Theme.Gallery">
+        <!-- Opt out edge-to-edge behavior -->
+        <item name="android:windowOptOutEdgeToEdgeEnforcement"
+            tools:ignore="NewApi">true</item>
+    </style>
+
 </resources>

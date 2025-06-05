@@ -2,4 +2,27 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary brand color -->
+    <color name="md_theme_primary">#6750A4</color>           <!-- Indigo -->
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+
+    <!-- Surface colors -->
+    <color name="md_theme_background">#FFFBFE</color>        <!-- Almost white -->
+    <color name="md_theme_onBackground">#1C1B1F</color>      <!-- Dark text on light -->
+
+    <color name="md_theme_surface">#FFFBFE</color>
+    <color name="md_theme_onSurface">#1C1B1F</color>
+
+    <!-- App bar/status bar -->
+    <color name="md_theme_status_bar">#E6E0F8</color>        <!-- Slight tint of primary -->
+
+    <!-- Optional: outline and secondary colors -->
+    <color name="md_theme_secondary">#625B71</color>
+    <color name="md_theme_onSecondary">#FFFFFF</color>
+
+    <color name="md_theme_outline">#79747E</color>
+
+    <color name="toolbar_title">#FF000000</color>
+    <color name="toolbar_back_arrow">#FF000000</color>
 </resources>
