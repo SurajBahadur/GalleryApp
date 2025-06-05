@@ -37,7 +37,6 @@ class AlbumDetailActivity : BaseActivity() {
         setContentView(binding.root)
 
         setupToolbar()
-        setupViewModel()
         setupRecyclerView()
         setupObservers()
         setupClickListeners()
@@ -49,15 +48,7 @@ class AlbumDetailActivity : BaseActivity() {
         binding.toolbar.setNavigationOnClickListener { finish() }
     }
 
-    private fun setupViewModel() {
-        val albumId = intent.getStringExtra("album_id") ?: ""
-        val albumTypeName = intent.getStringExtra("album_type") ?: AlbumType.FOLDER.name
-        val albumType = AlbumType.valueOf(albumTypeName)
 
-        /*val repository = MediaRepositoryImpl(MediaContentProvider(this))
-        val useCase = GetMediaItemsUseCase(repository)
-        viewModel = AlbumDetailViewModel(useCase, albumId, albumType)*/
-    }
 
     private fun setupRecyclerView() {
         adapter = MediaAdapter { mediaItem ->
