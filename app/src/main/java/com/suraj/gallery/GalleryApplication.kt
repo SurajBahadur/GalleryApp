@@ -1,6 +1,7 @@
 package com.suraj.gallery
 
 import android.app.Application
+import com.suraj.gallery.domain.usecase.GetAlbumsUseCase
 import dagger.hilt.android.HiltAndroidApp
 
 /**
@@ -8,4 +9,5 @@ import dagger.hilt.android.HiltAndroidApp
  */
 @HiltAndroidApp
 class GalleryApplication : Application() {
+
 }
