@@ -19,7 +19,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
+//        testInstrumentationRunner = "dagger.hilt.android.testing.HiltTestRunner"
     }
 
 
@@ -79,7 +79,7 @@ dependencies {
 
     //Hilt
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    kapt(libs.hilt.compiler)
     implementation(libs.androidx.hilt.common)
 
 
@@ -111,6 +111,14 @@ dependencies {
     androidTestImplementation(libs.androidx.rules)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.runner)
+
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.56.2")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.56.2")
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.6.1") // For RecyclerViewActions
+    androidTestImplementation("androidx.test.espresso:espresso-intents:3.6.1")
+
+
+
 }
 kapt {
     correctErrorTypes = true
