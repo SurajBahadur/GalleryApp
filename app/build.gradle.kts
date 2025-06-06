@@ -5,6 +5,7 @@ plugins {
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
     id("kotlin-parcelize")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -18,8 +19,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-//        testInstrumentationRunner = "dagger.hilt.android.testing.HiltTestRunner"
+        testInstrumentationRunner = "com.suraj.gallery.CustomerRunner"
+//        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
 
@@ -71,10 +72,6 @@ dependencies {
     implementation(libs.glide)
 
 
-    /*//Moshi
-    implementation(libs.converter.moshi)
-    implementation(libs.moshi.kotlin)*/
-
     ksp(libs.squareup.moshi.kotlin.codegen)
 
     //Hilt
@@ -83,41 +80,26 @@ dependencies {
     implementation(libs.androidx.hilt.common)
 
 
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-
-
-    implementation(libs.androidx.recyclerview)
-    testImplementation(kotlin("test"))
-
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockk)
+
+    androidTestImplementation(libs.androidx.junit)
+
     testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
     testImplementation(libs.androidx.core.testing)
-    androidTestImplementation(libs.androidx.junit)
 
-    // Coroutine test utilities
-    testImplementation(libs.kotlinx.coroutines.test)
-    // Mockito for Kotlin
-    testImplementation(libs.mockito.kotlin)
-
-    // Turbine for testing StateFlow
-    testImplementation(libs.turbine)
-
-    androidTestImplementation(libs.androidx.junit.v115)
-    androidTestImplementation(libs.androidx.runner)
-    androidTestImplementation(libs.androidx.rules)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.runner)
-
-    androidTestImplementation("com.google.dagger:hilt-android-testing:2.56.2")
-    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.56.2")
     androidTestImplementation("androidx.test.espresso:espresso-contrib:3.6.1") // For RecyclerViewActions
     androidTestImplementation("androidx.test.espresso:espresso-intents:3.6.1")
 
+    // For instrumentation tests
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.56.2")
+    androidTestAnnotationProcessor("com.google.dagger:hilt-compiler:2.56.2")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.56.2")
 
+    // For local unit tests
+    testAnnotationProcessor("com.google.dagger:hilt-compiler:2.56.2")
 
 }
 kapt {
