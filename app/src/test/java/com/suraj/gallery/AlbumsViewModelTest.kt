@@ -100,7 +100,7 @@ class AlbumsViewModelTest {
 
         // Then - Check loading state is emitted first
         val initialState = viewModel.uiState.first()
-        assertTrue(initialState is ViewState.Success)
+        assertTrue(initialState is ViewState.Loading)
     }
 
     @Test
